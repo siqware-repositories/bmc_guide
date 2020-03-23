@@ -1,3 +1,4 @@
+import 'package:bmc_guide/screens/carousel_screen.dart';
 import 'package:flutter/material.dart';
 
 class DrawerNavigation extends StatefulWidget {
@@ -32,7 +33,9 @@ class _DrawerNavigationState extends State<DrawerNavigation> {
           ListTile(
             title: Text("Category"),
             leading: Icon(Icons.category),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>CarouselDemo()));
+            },
           ),
         ],
       ),
