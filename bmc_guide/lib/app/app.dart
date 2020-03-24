@@ -1,4 +1,4 @@
-import 'package:bmc_guide/screens/welcome_screen.dart';
+import 'package:bmc_guide/helpers/drawer_navigation.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatefulWidget {
@@ -12,10 +12,11 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green
       ),
-      home: WelcomeScreen(),
+      home: DarkDrawerPage(),
     );
   }
 }
