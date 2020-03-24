@@ -1,10 +1,8 @@
 import 'package:bmc_guide/app/plugins/animation1.dart';
 import 'package:bmc_guide/app/plugins/oval_right_clipper.dart';
-import 'package:bmc_guide/screens/home_screen.dart';
+import 'package:bmc_guide/screens/home_screens/home_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'package:cached_network_image/cached_network_image.dart';
-
 class DarkDrawerPage extends StatelessWidget {
   static final String path = "lib/src/pages/navigation/drawer1.dart";
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();

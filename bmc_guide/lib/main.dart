@@ -1,6 +1,5 @@
-import 'package:bmc_guide/app/app.dart';
 import 'package:flutter/material.dart';
-
+import 'screens/welcome_screens/welcome_screen.dart';
 void main() {
-  runApp(App());
+  runApp(WelcomeScreen());
 }

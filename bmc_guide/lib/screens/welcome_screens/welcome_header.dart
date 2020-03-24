@@ -10,7 +10,7 @@ class _WelcomeHeaderState extends State<WelcomeHeader> {
   @override
   Widget build(BuildContext context) {
     final topPadding = MediaQuery.of(context).padding.top;
-    const headerHeight = 130.0;
+    const headerHeight = 160.0;
     return new Container(
       height: headerHeight,
       decoration: new BoxDecoration(
