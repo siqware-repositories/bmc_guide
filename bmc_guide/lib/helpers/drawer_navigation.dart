@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import 'package:bmc_guide/app/plugins/animation1.dart';
 import 'package:bmc_guide/app/plugins/oval_right_clipper.dart';
 import 'package:bmc_guide/screens/home_screen.dart';
+=======
+import 'package:bmc_guide/screens/carousel_screen.dart';
+>>>>>>> f5ca5276fecf795f947c2d4b3715e06b9ceda31d
 import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -90,7 +94,23 @@ class DarkDrawerPage extends StatelessWidget {
               ),
             ),
           ),
+<<<<<<< HEAD
         ),
+=======
+          ListTile(
+            title: Text("Home"),
+            leading: Icon(Icons.home),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text("Category"),
+            leading: Icon(Icons.category),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>CarouselDemo()));
+            },
+          ),
+        ],
+>>>>>>> f5ca5276fecf795f947c2d4b3715e06b9ceda31d
       ),
     );
   }
