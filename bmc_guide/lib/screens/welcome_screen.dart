@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 import 'package:bmc_guide/helpers/drawer_navigation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
->>>>>>> f5ca5276fecf795f947c2d4b3715e06b9ceda31d
 import 'package:flutter/material.dart';
 
 final List<String> imgList = [
@@ -97,9 +94,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   );
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return Text('Welcome screen!');
-=======
     return Scaffold(
       appBar: AppBar(
         title: Text('BMC Guide'),
@@ -134,9 +129,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ])),
         ],
       ),
-      drawer: DrawerNavigation(),
+      drawer: DarkDrawerPage(),
     );
->>>>>>> f5ca5276fecf795f947c2d4b3715e06b9ceda31d
   }
 
   //card
