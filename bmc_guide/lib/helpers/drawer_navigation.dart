@@ -1,35 +1,27 @@
 import 'package:bmc_guide/app/plugins/animation1.dart';
 import 'package:bmc_guide/app/plugins/oval_right_clipper.dart';
 import 'package:bmc_guide/screens/home_screens/home_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-class DarkDrawerPage extends StatelessWidget {
-  static final String path = "lib/src/pages/navigation/drawer1.dart";
-  final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
-  final Color primary = Color(0xff291747);
-  final Color active = Color(0xff6C48AB);
+import 'package:flutter/material.dart';
+
+
+final Color primary = Color(0xff291747);
+final Color active = Color(0xff6C48AB);
+
+class DrawerNavigation extends StatelessWidget {
+  const DrawerNavigation({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: _key,
-      appBar: AppBar(
-        title: Text('Dark Drawer Navigation'),
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {
-            _key.currentState.openDrawer();
-          },
-        ),
-      ),
-      drawer: _buildDrawer(context),
-      body: Text('Welcome screen!')
+    return Container(
+      child: _buildDrawer(context),
     );
   }
+}
 
-  _buildDrawer(BuildContext context) {
+_buildDrawer(BuildContext context) {
     final String image = images[0];
+    
     return ClipPath(
       clipper: OvalRightBorderClipper(),
       child: Drawer(
@@ -112,4 +104,3 @@ class DarkDrawerPage extends StatelessWidget {
           ),
     );
   }
-}

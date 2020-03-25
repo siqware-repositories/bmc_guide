@@ -1,4 +1,8 @@
+import 'package:bmc_guide/app/plugins/animation1.dart';
+import 'package:bmc_guide/app/plugins/oval_right_clipper.dart';
 import 'package:bmc_guide/app/plugins/p_network_image.dart';
+import 'package:bmc_guide/helpers/drawer_navigation.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -8,40 +12,6 @@ final List<String> imgList = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6XbEI2HEZZyzmilPFGxgcuz4HtJLl-yoA2FoulzJ465gWLehG',
 ];
 
-final places = [
-  {
-    'image':
-        'https://images.squarespace-cdn.com/content/v1/5b606ebf365f0294254cb375/1566934084440-8NGMNP6HR39UJ8KCC55X/ke17ZwdGBToddI8pDm48kCs9k2FwnVEVjbmR4eFa3A97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1US1QWbElf81Ctymx2zwlloFEHczpBX4WMgQEAHIayrQmtUU3Qk7m8xNTwgYptIWVug/07_Sunset_Beach_TigerTails_Day1_Caucasian_Mil_11273-1.jpg',
-    'name': 'Mountain'
-  },
-  {
-    'image':
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQH5l8qA6Y9Rql_bCkaGGnN_b2xGOYeWYLzKuVzA78C22CEOAU9',
-    'name': 'Occean'
-  },
-  {
-    'image':
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6XbEI2HEZZyzmilPFGxgcuz4HtJLl-yoA2FoulzJ465gWLehG',
-    'name': 'Foresty'
-  },
-];
-final restaurants = [
-  {
-    'image':
-        'https://images.squarespace-cdn.com/content/v1/5b606ebf365f0294254cb375/1566934084440-8NGMNP6HR39UJ8KCC55X/ke17ZwdGBToddI8pDm48kCs9k2FwnVEVjbmR4eFa3A97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1US1QWbElf81Ctymx2zwlloFEHczpBX4WMgQEAHIayrQmtUU3Qk7m8xNTwgYptIWVug/07_Sunset_Beach_TigerTails_Day1_Caucasian_Mil_11273-1.jpg',
-    'name': 'Mountain'
-  },
-  {
-    'image':
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQH5l8qA6Y9Rql_bCkaGGnN_b2xGOYeWYLzKuVzA78C22CEOAU9',
-    'name': 'Occean'
-  },
-  {
-    'image':
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6XbEI2HEZZyzmilPFGxgcuz4HtJLl-yoA2FoulzJ465gWLehG',
-    'name': 'Foresty'
-  },
-];
 
 final Widget placeholder = Container(color: Colors.grey);
 
@@ -118,6 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text('Home Screen!'),
       ),
+      drawer: DrawerNavigation(),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

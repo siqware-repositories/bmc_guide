@@ -11,7 +11,7 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Profile Challenge', home: WelcomeScreenPage());
+    return MaterialApp(debugShowCheckedModeBanner: false,title: 'Profile Challenge', home: WelcomeScreenPage());
   }
 }
 

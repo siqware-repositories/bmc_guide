@@ -15,7 +15,7 @@ class _AppState extends State<App> {
       theme: ThemeData(
         primarySwatch: Colors.green
       ),
-      home: DarkDrawerPage(),
+      home: Text('Under developing'),
     );
   }
 }
