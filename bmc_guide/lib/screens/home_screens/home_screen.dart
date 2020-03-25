@@ -1,6 +1,7 @@
 import 'package:bmc_guide/app/plugins/animation1.dart';
 import 'package:bmc_guide/app/plugins/oval_right_clipper.dart';
 import 'package:bmc_guide/app/plugins/p_network_image.dart';
+import 'package:bmc_guide/helpers/bottom_navigation_bar.dart';
 import 'package:bmc_guide/helpers/drawer_navigation.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -89,22 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Home Screen!'),
       ),
       drawer: DrawerNavigation(),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Business'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text('School'),
-          ),
-        ],
-      ),
+      bottomNavigationBar: BottomNavBar(),
       body: ListView(
         children: <Widget>[
           Padding(
