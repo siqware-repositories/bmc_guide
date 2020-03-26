@@ -1,7 +1,7 @@
 import 'package:bmc_guide/app/plugins/p_network_image.dart';
 import 'package:bmc_guide/helpers/bottom_navigation_bar.dart';
 import 'package:bmc_guide/helpers/drawer_navigation.dart';
-import 'package:bmc_guide/screens/detail_screen/travel_place_detail.dart';
+import 'package:bmc_guide/screens/detail_screen/place_detail_screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -84,11 +84,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Screen!'),
-      ),
-      drawer: DrawerNavigation(),
-      bottomNavigationBar: BottomNavBar(),
       body: ListView(
         children: <Widget>[
           Padding(
@@ -127,8 +122,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             height: 210,
             child:
-                ListView(scrollDirection: Axis.horizontal, children: cityCards),
+                ListView(scrollDirection: Axis.horizontal, children: travelPlaceCard),
           ),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             child: Row(
@@ -154,51 +150,148 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             height: 210,
             child:
-                ListView(scrollDirection: Axis.horizontal, children: cityCards),
+                ListView(scrollDirection: Axis.horizontal, children: restaurantCard),
           ),
+          
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Icon(Icons.hotel),
+                Text("Hotel",
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700)),
+                Spacer(),
+                Builder(
+                    builder: (BuildContext context) => Text(
+                          "View All",
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: Theme.of(context).primaryColor),
+                        ))
+              ],
+            ),
+          ),
+          Container(
+            height: 210,
+            child:
+                ListView(scrollDirection: Axis.horizontal, children: hotelCard),
+          ),
+          Padding(padding: const EdgeInsets.only(bottom: 20))
         ],
       ),
     );
   }
 }
 
-List<CityCard> cityCards = [
-  CityCard(
+List<ItemCard> travelPlaceCard = [
+  ItemCard(
+      "https://lh3.googleusercontent.com/proxy/iu9DNAUf1mErNOsAr57z3IsOjncr0DJy_pu-tgL2TzybLeKWexwjkPj4yY4VHJJX6t3eOcHxotmG039Gz9DfFnzbWDka_s_EXHxTJhOBqocqcrPpLKLTfXzda0M",
+      "ប្រាសាទកោះគេ",
+      "12 Feb",
+      "10",
+      "500",
+      '440'),
+  ItemCard(
+      "https://kohsantepheapdaily.com.kh/wp-content/uploads/2019/12/d87365f00eaf4dfa813c1d848539bb37-8.jpg",
+      "បន្ទាយឆ្មារ",
+      "12 Feb",
+      "10",
+      "500",
+      '440'),
+  ItemCard(
+      "https://i.imgur.com/AWdLPAp.jpg",
+      "អាង ទំពាំងថ្ម",
+      "12 Feb",
+      "10",
+      "500",
+      '440'),
+];
+
+List<ItemCard> restaurantCard = [
+  ItemCard(
       "https://cdn.pixabay.com/photo/2013/03/02/02/41/city-89197_960_720.jpg",
       "Kathmandu",
       "12 Feb",
       "10",
       "500",
       '440'),
-  CityCard(
+  ItemCard(
       "https://cdn.pixabay.com/photo/2017/12/10/17/40/prague-3010407_960_720.jpg",
       "Bhaktapur",
       "12 Feb",
       "10",
       "500",
       '440'),
-  CityCard(
+  ItemCard(
       "https://cdn.pixabay.com/photo/2014/07/01/12/35/taxi-cab-381233_960_720.jpg",
       "Morang",
       "12 Feb",
       "10",
       "500",
       '440'),
-  CityCard(
+  ItemCard(
       "https://cdn.pixabay.com/photo/2013/03/02/02/41/city-89197_960_720.jpg",
       "Kathmandu",
       "12 Feb",
       "10",
       "500",
       '440'),
-  CityCard(
+  ItemCard(
       "https://cdn.pixabay.com/photo/2017/12/10/17/40/prague-3010407_960_720.jpg",
       "Bhaktapur",
       "12 Feb",
       "10",
       "500",
       '440'),
-  CityCard(
+  ItemCard(
+      "https://cdn.pixabay.com/photo/2014/07/01/12/35/taxi-cab-381233_960_720.jpg",
+      "Morang",
+      "12 Feb",
+      "10",
+      "500",
+      '440'),
+];
+List<ItemCard> hotelCard = [
+  ItemCard(
+      "https://cdn.pixabay.com/photo/2013/03/02/02/41/city-89197_960_720.jpg",
+      "Kathmandu",
+      "12 Feb",
+      "10",
+      "500",
+      '440'),
+  ItemCard(
+      "https://cdn.pixabay.com/photo/2017/12/10/17/40/prague-3010407_960_720.jpg",
+      "Bhaktapur",
+      "12 Feb",
+      "10",
+      "500",
+      '440'),
+  ItemCard(
+      "https://cdn.pixabay.com/photo/2014/07/01/12/35/taxi-cab-381233_960_720.jpg",
+      "Morang",
+      "12 Feb",
+      "10",
+      "500",
+      '440'),
+  ItemCard(
+      "https://cdn.pixabay.com/photo/2013/03/02/02/41/city-89197_960_720.jpg",
+      "Kathmandu",
+      "12 Feb",
+      "10",
+      "500",
+      '440'),
+  ItemCard(
+      "https://cdn.pixabay.com/photo/2017/12/10/17/40/prague-3010407_960_720.jpg",
+      "Bhaktapur",
+      "12 Feb",
+      "10",
+      "500",
+      '440'),
+  ItemCard(
       "https://cdn.pixabay.com/photo/2014/07/01/12/35/taxi-cab-381233_960_720.jpg",
       "Morang",
       "12 Feb",
@@ -207,9 +300,9 @@ List<CityCard> cityCards = [
       '440'),
 ];
 
-class CityCard extends StatelessWidget {
+class ItemCard extends StatelessWidget {
   final String imagePath, cityName, monthYear, discount, oldPrice, newPrice;
-  CityCard(this.imagePath, this.cityName, this.monthYear, this.discount,
+  ItemCard(this.imagePath, this.cityName, this.monthYear, this.discount,
       this.oldPrice, this.newPrice);
   @override
   Widget build(BuildContext context) {

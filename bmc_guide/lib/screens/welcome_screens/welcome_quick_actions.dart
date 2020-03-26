@@ -1,3 +1,4 @@
+import 'package:bmc_guide/page/main_page.dart';
 import 'package:bmc_guide/screens/home_screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class QuickActions extends StatelessWidget {
                 left: 10.0, bottom: 20.0, right: 10.0, top: 10.0),
             scrollDirection: Axis.horizontal,
             children: <Widget>[
-              _buildAction("Location\nGuide", () {Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (context) => HomeScreen()));}, Colors.blue, whiteGradient,
+              _buildAction("Location\nGuide", () {Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (context) => MainPage()));}, Colors.blue, whiteGradient,
                   new AssetImage("assets/images/map.png")),
               _buildAction("Restaurant\nCafe", () {}, Colors.purple,
                   whiteGradient, new AssetImage("assets/images/dish.png")),

@@ -1,4 +1,5 @@
 import 'package:bmc_guide/app/plugins/p_network_image.dart';
+import 'package:bmc_guide/helpers/bottom_navigation_bar.dart';
 import 'package:bmc_guide/screens/destination_screen/destination_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -8,10 +9,6 @@ class TravelHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Place Travel'),
-        leading: Icon(Icons.arrow_back_ios),
-      ),
       body: ListView(
         children: <Widget>[HomeScreenTop(), homeScreenBottom],
       ),
@@ -218,7 +215,8 @@ final Widget homeScreenBottom = Column(
               ),
             ),
             )
-          )
+          ),
+          Padding(padding: const EdgeInsets.only(bottom: 40))
         ],
       ),
     ),
