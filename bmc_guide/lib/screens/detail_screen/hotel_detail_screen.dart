@@ -2,7 +2,7 @@ import 'package:bmc_guide/app/plugins/p_network_image.dart';
 import 'package:bmc_guide/screens/destination_screen/destination_screen.dart';
 import 'package:flutter/material.dart';
 
-class TravelHome extends StatelessWidget {
+class HotelHome extends StatelessWidget {
   static final String path = "lib/src/pages/travel/travel_home.dart";
 
   @override
@@ -194,7 +194,7 @@ final Widget homeScreenBottom = Column(
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
-          Text('Travel Place',
+          Text('Hotel Place',
             style: TextStyle(
               color: Colors.black87,
               fontSize: 15,

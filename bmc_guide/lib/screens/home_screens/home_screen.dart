@@ -1,5 +1,6 @@
 import 'package:bmc_guide/app/plugins/p_network_image.dart';
-import 'package:bmc_guide/screens/detail_screen/place_detail_screen.dart';
+import 'package:bmc_guide/helpers/drawer_navigation.dart';
+import 'package:bmc_guide/page/main_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -85,6 +86,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          title: Text('Home Page'),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[Color(0xFF00A2E3),Color(0xFF0075D1)])),
+          ),
+        ),
+        drawer: DrawerNavigation(),
       body: ListView(
         children: <Widget>[
           Padding(
@@ -97,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Text("Tavel Lovation",
+                Text("Tavel Location",
                     style: TextStyle(
                         color: Colors.black87,
                         fontSize: 15,
@@ -113,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           onTap: () {
                             Navigator.of(context).push(new MaterialPageRoute(
-                                builder: (context) => new TravelHome()));
+                                builder: (context) => new MainPage(0)));
                           },
                         ))
               ],
@@ -136,11 +148,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.w700)),
                 Spacer(),
                 Builder(
-                    builder: (BuildContext context) => Text(
-                          "View All",
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Theme.of(context).primaryColor),
+                    builder: (BuildContext context) => GestureDetector(
+                          child: Text(
+                            "View All",
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: Theme.of(context).primaryColor),
+                          ),
+                          onTap: () {
+                            Navigator.of(context).push(new MaterialPageRoute(
+                                builder: (context) => new MainPage(3)));
+                          },
                         ))
               ],
             ),
@@ -162,11 +180,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.w700)),
                 Spacer(),
                 Builder(
-                    builder: (BuildContext context) => Text(
-                          "View All",
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Theme.of(context).primaryColor),
+                    builder: (BuildContext context) => GestureDetector(
+                          child: Text(
+                            "View All",
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: Theme.of(context).primaryColor),
+                          ),
+                          onTap: () {
+                            Navigator.of(context).push(new MaterialPageRoute(
+                                builder: (context) => new MainPage(1)));
+                          },
                         ))
               ],
             ),

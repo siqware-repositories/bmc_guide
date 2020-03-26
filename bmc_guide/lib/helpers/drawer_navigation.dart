@@ -1,7 +1,6 @@
 import 'package:bmc_guide/app/plugins/animation1.dart';
 import 'package:bmc_guide/app/plugins/oval_right_clipper.dart';
 import 'package:bmc_guide/screens/home_screens/home_screen.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 
