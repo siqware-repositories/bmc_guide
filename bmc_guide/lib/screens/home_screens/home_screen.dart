@@ -1,9 +1,7 @@
-import 'package:bmc_guide/app/plugins/animation1.dart';
-import 'package:bmc_guide/app/plugins/oval_right_clipper.dart';
 import 'package:bmc_guide/app/plugins/p_network_image.dart';
 import 'package:bmc_guide/helpers/bottom_navigation_bar.dart';
 import 'package:bmc_guide/helpers/drawer_navigation.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:bmc_guide/screens/detail_screen/travel_place_detail.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -111,12 +109,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.w700)),
                 Spacer(),
                 Builder(
-                    builder: (BuildContext context) => Text(
+                    builder: (BuildContext context) => GestureDetector(
+                      child: Text(
                           "View All",
                           style: TextStyle(
                               fontSize: 14,
                               color: Theme.of(context).primaryColor),
-                        ))
+                        ),
+                        onTap: (){
+                          Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new TravelHome()));
+                        },
+                    )
+                )
               ],
             ),
           ),

@@ -7,7 +7,7 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _page = 0;
+  int _page = 1;
   GlobalKey _bottomNavigationKey = GlobalKey();
 
   @override
@@ -21,11 +21,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
             Icon(Icons.home, size: 25),
             Icon(Icons.restaurant, size: 25),
           ],
-          color: Colors.white,
-          buttonBackgroundColor: Colors.white,
-          backgroundColor: Colors.indigo,
+          color: Colors.blueAccent,
+          buttonBackgroundColor: Colors.redAccent,
+          backgroundColor: Colors.transparent,
           animationCurve: Curves.easeInOut,
-          animationDuration: Duration(milliseconds: 600),
+          animationDuration: Duration(milliseconds: 200),
           onTap: (index) {
             setState(() {
               _page = index;
