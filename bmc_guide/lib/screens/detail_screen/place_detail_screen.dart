@@ -1,5 +1,4 @@
 import 'package:bmc_guide/app/plugins/p_network_image.dart';
-import 'package:bmc_guide/helpers/bottom_navigation_bar.dart';
 import 'package:bmc_guide/screens/destination_screen/destination_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -261,7 +260,7 @@ class CityCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(2)),
         child: Stack(
           children: <Widget>[
             Container(

@@ -1,16 +1,12 @@
 import 'package:bmc_guide/app/plugins/p_network_image.dart';
-import 'package:bmc_guide/helpers/bottom_navigation_bar.dart';
-import 'package:bmc_guide/helpers/drawer_navigation.dart';
 import 'package:bmc_guide/screens/detail_screen/place_detail_screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 final List<String> imgList = [
   'https://images.squarespace-cdn.com/content/v1/5b606ebf365f0294254cb375/1566934084440-8NGMNP6HR39UJ8KCC55X/ke17ZwdGBToddI8pDm48kCs9k2FwnVEVjbmR4eFa3A97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1US1QWbElf81Ctymx2zwlloFEHczpBX4WMgQEAHIayrQmtUU3Qk7m8xNTwgYptIWVug/07_Sunset_Beach_TigerTails_Day1_Caucasian_Mil_11273-1.jpg',
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQH5l8qA6Y9Rql_bCkaGGnN_b2xGOYeWYLzKuVzA78C22CEOAU9',
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6XbEI2HEZZyzmilPFGxgcuz4HtJLl-yoA2FoulzJ465gWLehG',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQH5l8qA6Y9Rql_bCkaGGnN_b2xGOYeWYLzKuVzA78C22CEOAU9'
 ];
-
 
 final Widget placeholder = Container(color: Colors.grey);
 
@@ -20,9 +16,14 @@ final List child = map<Widget>(
     return Container(
       margin: EdgeInsets.all(5.0),
       child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+        borderRadius: BorderRadius.all(Radius.circular(3)),
         child: Stack(children: <Widget>[
-          Image.network(i, fit: BoxFit.cover, width: 1000.0),
+          PNetworkImage(
+            i,
+            fit: BoxFit.cover,
+            width: 1000,
+          ),
+          // Image.network(i, fit: BoxFit.cover, width: 1000.0),
           Positioned(
             bottom: 0.0,
             left: 0.0,
@@ -38,7 +39,7 @@ final List child = map<Widget>(
                   end: Alignment.topCenter,
                 ),
               ),
-              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+              padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
               child: Text(
                 'No. $index image ',
                 style: TextStyle(
@@ -92,12 +93,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 manualCarousel, //Header slide
               ])),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 16),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Icon(Icons.place),
-                Text("Travel Location",
+                Text("Tavel Lovation",
                     style: TextStyle(
                         color: Colors.black87,
                         fontSize: 15,
@@ -105,32 +105,30 @@ class _HomeScreenState extends State<HomeScreen> {
                 Spacer(),
                 Builder(
                     builder: (BuildContext context) => GestureDetector(
-                      child: Text(
-                          "View All",
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: Theme.of(context).primaryColor),
-                        ),
-                        onTap: (){
-                          Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new TravelHome()));
-                        },
-                    )
-                )
+                          child: Text(
+                            "View All",
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: Theme.of(context).primaryColor),
+                          ),
+                          onTap: () {
+                            Navigator.of(context).push(new MaterialPageRoute(
+                                builder: (context) => new TravelHome()));
+                          },
+                        ))
               ],
             ),
           ),
           Container(
             height: 210,
-            child:
-                ListView(scrollDirection: Axis.horizontal, children: travelPlaceCard),
+            child: ListView(
+                scrollDirection: Axis.horizontal, children: travelPlaceCard),
           ),
-
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 16),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Icon(Icons.restaurant),
                 Text("Restaurant",
                     style: TextStyle(
                         color: Colors.black87,
@@ -149,16 +147,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Container(
             height: 210,
-            child:
-                ListView(scrollDirection: Axis.horizontal, children: restaurantCard),
+            child: ListView(
+                scrollDirection: Axis.horizontal, children: restaurantCard),
           ),
-          
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 16),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
-                Icon(Icons.hotel),
                 Text("Hotel",
                     style: TextStyle(
                         color: Colors.black87,
@@ -189,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 List<ItemCard> travelPlaceCard = [
   ItemCard(
-      "https://lh3.googleusercontent.com/proxy/iu9DNAUf1mErNOsAr57z3IsOjncr0DJy_pu-tgL2TzybLeKWexwjkPj4yY4VHJJX6t3eOcHxotmG039Gz9DfFnzbWDka_s_EXHxTJhOBqocqcrPpLKLTfXzda0M",
+      "https://cdn.pixabay.com/photo/2013/03/02/02/41/city-89197_960_720.jpg",
       "ប្រាសាទកោះគេ",
       "12 Feb",
       "10",
@@ -202,13 +198,8 @@ List<ItemCard> travelPlaceCard = [
       "10",
       "500",
       '440'),
-  ItemCard(
-      "https://i.imgur.com/AWdLPAp.jpg",
-      "អាង ទំពាំងថ្ម",
-      "12 Feb",
-      "10",
-      "500",
-      '440'),
+  ItemCard("https://i.imgur.com/AWdLPAp.jpg", "អាង ទំពាំងថ្ម", "12 Feb", "10",
+      "500", '440'),
 ];
 
 List<ItemCard> restaurantCard = [
@@ -309,7 +300,7 @@ class ItemCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(2)),
         child: Stack(
           children: <Widget>[
             Container(

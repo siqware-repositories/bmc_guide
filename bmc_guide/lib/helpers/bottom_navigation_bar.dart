@@ -29,9 +29,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
             Icon(Icons.home, size: 25),
             Icon(Icons.restaurant, size: 25),
           ],
-          color: Colors.blueAccent,
-          buttonBackgroundColor: Colors.redAccent,
-          backgroundColor: Colors.transparent,
+          color: Color(0xFF0075D1),
+          buttonBackgroundColor: Color(0xFF0075D1),
+          backgroundColor: Color(0xFF0075D1),
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 200),
           onTap: (index) {
