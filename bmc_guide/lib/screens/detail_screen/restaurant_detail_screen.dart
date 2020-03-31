@@ -1,5 +1,4 @@
-import 'package:bmc_guide/app/plugins/p_network_image.dart';
-import 'package:bmc_guide/screens/destination_screen/destination_screen.dart';
+import 'package:bmc_guide/helpers/item_card.dart';
 import 'package:flutter/material.dart';
 
 
@@ -190,145 +189,52 @@ class WaveClipper extends CustomClipper<Path> {
 
 final Widget homeScreenBottom = Column(
   children: <Widget>[
-    Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          Text('Restaurant Place',
-            style: TextStyle(
-              color: Colors.black87,
-              fontSize: 15,
-              fontWeight: FontWeight.w700
-            )
-          ),
-          Spacer(),
-          Builder(
-            builder: (BuildContext context) => GestureDetector(
-              onTap: (){
-                Navigator.of(context).push(new MaterialPageRoute(builder: (context) => new TravelNepalPage()));
-              },
-              child: Text(
-              "View All",
-              style: TextStyle(
-                fontSize: 14, color: Theme.of(context).primaryColor
-              ),
-            ),
-            )
-          ),
-          Padding(padding: const EdgeInsets.only(bottom: 40))
-        ],
-      ),
-    ),
+    // Padding(
+    //   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+    //   child: Row(
+    //     mainAxisSize: MainAxisSize.max,
+    //     children: <Widget>[
+    //       // Text('Restaurant Place',
+    //       //   style: TextStyle(
+    //       //     color: Colors.black87,
+    //       //     fontSize: 15,
+    //       //     fontWeight: FontWeight.w700
+    //       //   )
+    //       // ),
+    //       // Spacer(),
+    //       // Builder(
+    //       //   builder: (BuildContext context) => GestureDetector(
+    //       //     onTap: (){
+                
+    //       //     },
+    //       //     child: Text(
+    //       //     "View All",
+    //       //     style: TextStyle(
+    //       //       fontSize: 14, color: Theme.of(context).primaryColor
+    //       //     ),
+    //       //   ),
+    //       //   )
+    //       // ),
+    //       // Padding(padding: const EdgeInsets.only(bottom: 40))
+    //     ],
+    //   ),
+    // ),
     
     Container(
       height: 210,
-      child: ListView(scrollDirection: Axis.horizontal, children: cityCards),
-    )
+      child: ListView(scrollDirection: Axis.horizontal, children: itemCard),
+    ),
+    Padding(padding: const EdgeInsets.only(bottom: 40))
   ],
 );
 
-List<CityCard> cityCards = [
-  CityCard(
+List<ItemCard> itemCard = [
+  ItemCard(
       "https://cdn.pixabay.com/photo/2013/03/02/02/41/city-89197_960_720.jpg",
       "Kathmandu",
       "12 Feb",
       "10",
       "500",
       '440'),
-  CityCard(
-      "https://cdn.pixabay.com/photo/2017/12/10/17/40/prague-3010407_960_720.jpg",
-      "Bhaktapur",
-      "12 Feb",
-      "10",
-      "500",
-      '440'),
-  CityCard(
-      "https://cdn.pixabay.com/photo/2014/07/01/12/35/taxi-cab-381233_960_720.jpg",
-      "Morang",
-      "12 Feb",
-      "10",
-      "500",
-      '440'),
 ];
 
-class CityCard extends StatelessWidget {
-  final String imagePath, cityName, monthYear, discount, oldPrice, newPrice;
-  CityCard(this.imagePath, this.cityName, this.monthYear, this.discount,
-      this.oldPrice, this.newPrice);
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(2)),
-        child: Stack(
-          children: <Widget>[
-            Container(
-              width: 160,
-              height: 210,
-              child: PNetworkImage(
-                imagePath,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Positioned(
-              left: 0,
-              bottom: 0,
-              width: 160,
-              height: 60,
-              child: Container(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        colors: [Colors.black, Colors.black12])),
-              ),
-            ),
-            Positioned(
-              left: 10,
-              bottom: 10,
-              width: 145,
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        cityName,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 1),
-                      ),
-                      Text(
-                        monthYear,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ],
-                  ),
-                  Container(
-                      padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: Text(
-                        "$discount%",
-                        style: TextStyle(color: Colors.black, fontSize: 14),
-                      ))
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}

@@ -1,5 +1,6 @@
 import 'package:bmc_guide/app/plugins/animation1.dart';
 import 'package:bmc_guide/app/plugins/oval_right_clipper.dart';
+import 'package:bmc_guide/page/main_page.dart';
 import 'package:bmc_guide/screens/home_screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -63,11 +64,11 @@ _buildDrawer(BuildContext context) {
                   //   "@erika07",
                   //   style: TextStyle(color: active, fontSize: 16.0),
                   // ),
-                  _buildRow(context, Icons.home, "Home", HomeScreen()),
-                  _buildRow(context, Icons.person_pin, "Your profile", HomeScreen()),
-                  _buildRow(context, Icons.settings, "Settings", HomeScreen()),
-                  _buildRow(context, Icons.email, "Contact us", HomeScreen()),
-                  _buildRow(context, Icons.info_outline, "Help", HomeScreen()),
+                  _buildRow(context, Icons.home, "Home", 2),
+                  _buildRow(context, Icons.place, "Travel Place", 0),
+                  _buildRow(context, Icons.restaurant, "Restaurant", 3),
+                  _buildRow(context, Icons.hotel, "Hotel", 1),
+                  _buildRow(context, Icons.info_outline, "Help", 2),
                 ],
               ),
             ),
@@ -77,7 +78,7 @@ _buildDrawer(BuildContext context) {
     );
   }
 
-  Widget _buildRow(BuildContext context, IconData icon, String title, var className) {
+  Widget _buildRow(BuildContext context, IconData icon, String title, var index) {
     // final TextStyle tStyle = TextStyle(color: active, fontSize: 16.0);
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 2.0),
@@ -85,7 +86,7 @@ _buildDrawer(BuildContext context) {
             title: Text(title),
             leading: Icon(icon),
             onTap: () {
-              Navigator.of(context).push(new MaterialPageRoute(builder: (context) => className));
+              Navigator.of(context).push(new MaterialPageRoute(builder: (context) => MainPage(index)));
             },
           ),
     );
